@@ -2,30 +2,19 @@
 <html lang="hr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galerija slika</title>
   <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
   <h1>Galerija slika</h1>
-
-  <section class="gallery" role="region" aria-label="Galerija slika">
+  <section class="gallery">
     <% images.forEach(image => { %>
       <figure>
-        <a href="#<%= image.id %>">
-          <img src="<%= image.url %>" alt="<%= image.title %>">
-        </a>
+        <img src="<%= image.url %>" alt="<%= image.title %>">
         <figcaption><%= image.title %></figcaption>
       </figure>
-    <% }) %>
+    <% }); %>
   </section>
-
-  <!-- Lightbox dio -->
-  <% images.forEach(image => { %>
-    <div class="lightbox" id="<%= image.id %>">
-      <a href="#" class="close" aria-label="Zatvori prikaz slike">&times;</a>
-      <img src="<%= image.url %>" alt="<%= image.title %>">
-      <p><%= image.title %></p>
-    </div>
-  <% }) %>
 </body>
 </html>
